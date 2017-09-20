@@ -2,6 +2,8 @@
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+
 
 " Make Vim more useful
 set nocompatible
@@ -104,3 +106,15 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+" https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+let python_highlight_all=1
