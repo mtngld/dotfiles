@@ -118,3 +118,18 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 let python_highlight_all=1
+
+" Moving lines, based on:
+" https://dockyard.com/blog/2013/09/26/vim-moving-lines-aint-hard
+
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
